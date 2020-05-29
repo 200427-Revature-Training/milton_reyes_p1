@@ -1,34 +1,46 @@
 export class Reimbursement {
-    ersReimbursementname: string;
-    ersPassword: string;
-    reimbursementFirstName: string;
-    reimbursementLastName: string;
-    reimbursementEmail: string;
-    ersReimbursementRoleId: number;
+    reimbAmount: number;
+	reimbSubmitted: Date;
+	reimbResolved: Date;
+	reimbDescription: string;
+	reimbReceipt: string;
+	ersReimbursementStatusId: number;
+	ersReimbursementTypeId: number;
+	reimbAuthor: number;
+	reimbResolver: number;
 
     constructor(
-        ersReimbursementname:string,
-        ersPassword: string,
-        reimbursementFirstName: string,
-        reimbursementLastName: string,
-        reimbursementEmail: string,
-        ersReimbursementRoleId: number) {
-            this.ersReimbursementname = ersReimbursementname;
-            this.ersPassword = ersPassword;
-            this.reimbursementFirstName = reimbursementFirstName;
-            this.reimbursementLastName = reimbursementLastName;
-            this.reimbursementEmail = reimbursementEmail;
-            this.ersReimbursementRoleId = ersReimbursementRoleId;
+        reimbAmount: number,
+	    reimbSubmitted: Date,
+	    reimbResolved: Date,
+	    reimbDescription: string,
+	    reimbReceipt: string,
+	    ersReimbursementStatusId: number,
+	    ersReimbursementTypeId: number,
+	    reimbAuthor: number,
+	    reimbResolver: number) {
+            this.reimbAmount = reimbAmount;
+	        this.reimbSubmitted = reimbSubmitted;
+	        this.reimbResolved = reimbResolved;
+	        this.reimbDescription = reimbDescription;
+	        this.reimbReceipt = reimbReceipt;
+	        this.ersReimbursementStatusId = ersReimbursementStatusId;
+	        this.ersReimbursementTypeId = ersReimbursementTypeId;
+	        this.reimbAuthor = reimbAuthor;
+	        this.reimbResolver = reimbResolver;
     }
 
     static from(obj: ReimbursementRow): Reimbursement {
         const reimbursement = new Reimbursement(
-            obj.ers_reimbursementname,
-            obj.ers_password,
-            obj.reimbursement_first_name,
-            obj.reimbursement_last_name,
-            obj.reimbursement_email,
-            obj.ers_reimbursement_role_id);
+            obj.reimb_amount,
+	        obj.reimb_submitted,
+	        obj.reimb_resolved,
+	        obj.reimb_description,
+	        obj.reimb_receipt,
+	        obj.ers_reimbursement_status_id,
+	        obj.ers_reimbursement_type_id,
+	        obj.reimb_author,
+	        obj.reimb_resolver);
         return reimbursement;
     }
 }
@@ -36,11 +48,11 @@ export class Reimbursement {
 export interface ReimbursementRow {
     reimb_amount: number;
 	reimb_submitted: Date;
-	reimb_resolved timestamp NOT NULL,
-	reimb_description varchar(250) NOT NULL,
-	reimb_receipt varchar(100) NOT NULL UNIQUE,
-	ers_reimbursement_status_id int4 NOT NULL,
-	ers_reimbursement_type_id int4 NOT NULL,
-	reimb_author int4 NOT NULL,
-	reimb_resolver int4
+	reimb_resolved: Date;
+	reimb_description: string;
+	reimb_receipt: string;
+	ers_reimbursement_status_id: number;
+	ers_reimbursement_type_id: number;
+	reimb_author: number;
+	reimb_resolver: number;
 }
