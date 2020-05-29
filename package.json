@@ -1,36 +1,50 @@
 {
   "name": "milton_reyes_p1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon ./src/app.ts",
-    "test": "jest --verbose --coverage"
-  },
-  "author": "Milton Reyes",
-  "license": "ISC",
-  "repository": {},
-  "bugs": {},
-  "devDependencies": {
-    "@types/express": "^4.17.6",
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.5",
-    "@types/pg": "^7.14.3",
-    "@types/supertest": "^2.0.9",
-    "jest": "^26.0.0",
-    "nodemon": "^2.0.3",
-    "supertest": "^4.0.2",
-    "ts-jest": "^25.4.0",
-    "ts-node": "^8.10.1",
-    "tslint": "^6.1.2",
-    "typescript": "^3.8.3"
-  },
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "axios": "^0.19.2",
-    "body-parser": "^1.19.0",
-    "chalk": "^4.0.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.5",
+    "@types/pg": "^7.14.3",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/supertest": "^2.0.9",
     "express": "^4.17.1",
-    "pg": "^8.1.0",
-    "react": "^16.13.1"
+    "jest": "24.9.0",
+    "nodemon": "^2.0.4",
+    "pg": "^8.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "supertest": "^4.0.2",
+    "ts-jest": "^26.0.0",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
