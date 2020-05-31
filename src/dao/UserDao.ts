@@ -6,10 +6,16 @@ export function getAllUsers(): Promise<User[]> {
 
     return db.query<UserRow>(sql, []).then(result => {
         const rows: UserRow[] = result.rows;
-
+        console.log(rows);
         const users: User[] = rows.map(row => User.from(row));
         return users;
     });
+}
+
+export async function getAllUsers2(): Promise<User[]> {
+    const sql = `SELECT * from ers_users`;
+    const result = await db.query<User>(sql, []);
+    return result.rows;
 }
 
 export function getUserByEmail(email: string): Promise<User> {
