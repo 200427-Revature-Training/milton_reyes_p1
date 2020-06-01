@@ -9,6 +9,6 @@ Entity Relatioship Diagram from dbeaver:
 ### Reimbursement && Status && Type
 + get method to list reimbursement requests
 
- Users need to be able to see current and past requests
+   Users need to be able to see current and past requests
 + post method to save a new reimbursement request and type
 + post method to update reimbursement status
