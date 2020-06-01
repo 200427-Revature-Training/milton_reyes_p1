@@ -7,23 +7,23 @@ Entity Relatioship Diagram from dbeaver:
 #### USERS && USER ROLES
 + **Get** method to list users
 
-   Required to verify and set login status
+   --Required to verify and set login status
 
 
 + **Get** method to match roles against users
 
-   Required to set privileges to employees or finance managers and display proper allowed sections in the web site
+   --Required to set privileges to employees or finance managers and display proper allowed sections in the web site
 ### Reimbursement && Status && Type
 + **Get** method to list reimbursement requests
 
-   Users need to be able to see current and past requests && request status
+   --Users need to be able to see current and past requests && request status
 
 
 + **Post** method to save a new reimbursement request and type
 
-   Users need to create a new reimbursement request
+   --Users need to create a new reimbursement request
 
 
 + **Post** method to update reimbursement && reimbursement status
 
-   Finance managers need to be able to update reimbursement status & assign the new status to the reimbursement request
+   --Finance managers need to be able to update reimbursement status & assign the new status to the reimbursement request
