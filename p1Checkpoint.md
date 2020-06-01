@@ -12,7 +12,6 @@ Entity Relatioship Diagram from dbeaver:
    Required to set privileges to employees or finance managers and display proper allowed sections in the web site
 ### Reimbursement && Status && Type
 + get method to list reimbursement requests
-
    Users need to be able to see current and past requests && request status
 + post method to save a new reimbursement request and type
 
