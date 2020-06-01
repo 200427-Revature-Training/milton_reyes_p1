@@ -5,22 +5,25 @@ Entity Relatioship Diagram from dbeaver:
 
 ### API Specification
 #### USERS && USER ROLES
-+ get method to list users
++ **Get** method to list users
 
    Required to verify and set login status
 
-+ get method to match roles against users
+
++ **Get** method to match roles against users
 
    Required to set privileges to employees or finance managers and display proper allowed sections in the web site
 ### Reimbursement && Status && Type
-+ get method to list reimbursement requests
++ **Get** method to list reimbursement requests
 
    Users need to be able to see current and past requests && request status
 
-+ post method to save a new reimbursement request and type
+
++ **Post** method to save a new reimbursement request and type
 
    Users need to create a new reimbursement request
 
-+ post method to update reimbursement && reimbursement status
+
++ **Post** method to update reimbursement && reimbursement status
 
    Finance managers need to be able to update reimbursement status & assign the new status to the reimbursement request
