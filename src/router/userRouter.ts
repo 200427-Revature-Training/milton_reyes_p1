@@ -22,6 +22,7 @@ userRouter.post('', (request, response, next) => {
         response.json(newUser);
         next();
     }).catch(err => {
+        console.log(err);
         response.sendStatus(500);
         next();
     })
