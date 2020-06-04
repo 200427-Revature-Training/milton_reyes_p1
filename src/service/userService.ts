@@ -36,6 +36,7 @@ export function patchUser(input: any): Promise<User> {
 }
 
 export function saveUser(user: any): Promise<User> {
+    console.log("Inside saveuser service");
     const newUser = new User(
         user.ersUsername, user.ersPassword,
         user.userFirstName, user.userLastName,
@@ -44,7 +45,7 @@ export function saveUser(user: any): Promise<User> {
     if (newUser.ersUsername && newUser.ersPassword &&
         newUser.userFirstName && newUser.userLastName &&
         newUser.userEmail && newUser.ersUserRoleId) {
-            return userDao.saveUser(user);
+            return userDao.saveUser(newUser);
         } else {
             return new Promise((resolve, reject) => reject(422));
         }

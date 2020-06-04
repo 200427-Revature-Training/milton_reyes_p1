@@ -1,7 +1,6 @@
 import { UserRole, UserRoleRow } from '../model/UserRole';
 import * as userRoleDao from '../dao/UserRoleDao';
 
-
 export function getAllRoles(): Promise<UserRoleRow[]> {
     return userRoleDao.getAllRoles();
 }

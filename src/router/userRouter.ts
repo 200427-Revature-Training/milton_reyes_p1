@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import * as userService from '../service/userService';
 
 export const userRouter = express.Router();
@@ -16,7 +17,9 @@ userRouter.get('', (request, response, next) => {
 });
 
 userRouter.post('', (request, response, next) => {
+    console.log("Inside post");
     const user = request.body;
+    console.log(user);
     userService.saveUser(user).then(newUser => {
         response.status(201);
         response.json(newUser);
