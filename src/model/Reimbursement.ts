@@ -42,8 +42,9 @@ export class Reimbursement {
 	        obj.reimb_author,
 	        obj.reimb_resolver);
         return reimbursement;
-    }
+	}
 }
+
 
 export interface ReimbursementRow {
     reimb_amount: number;
