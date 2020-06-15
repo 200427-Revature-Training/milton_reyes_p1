@@ -6,10 +6,34 @@ export function getAllUsers(): Promise<User[]> {
 
     return db.query<UserRow>(sql, []).then(result => {
         const rows: UserRow[] = result.rows;
-        console.log(rows);
+        // console.log(rows);
         const users: User[] = rows.map(row => User.from(row));
         return users;
     });
+}
+
+export async function getAllUsersWithRoles(): Promise<User[]> {
+    const sql = `SELECT * FROM ers_users \
+LEFT JOIN ers_user_roles ON ers_users.ers_user_role_id = ers_user_roles.id`;
+    const result = await db.query<User>(sql, []);
+    return result.rows;
+}
+
+export function getUserWithRoleByUsername(username: string): Promise<User> {
+    const sql = `SELECT * FROM ers_users \
+LEFT JOIN ers_user_roles ON ers_users.ers_user_role_id = ers_user_roles.id
+WHERE ers_username = $1`;
+    return db.query<UserRow>(sql, [username])
+        .then(result => result.rows.map(row => User.from(row))[0]);
+}
+
+export async function getUserWithRoleByEmail(email: string): Promise<User> {
+    const sql = `SELECT * FROM ers_users \
+LEFT JOIN ers_user_roles ON ers_users.ers_user_role_id = ers_user_roles.id
+WHERE user_email = $1`;
+    // console.log('inside userDao');
+    const result = await db.query<UserRow>(sql, [email]);
+    return result.rows.map(row => User.from(row))[0];
 }
 
 export async function getAllUsers2(): Promise<User[]> {

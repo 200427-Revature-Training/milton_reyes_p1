@@ -15,3 +15,7 @@ export function saveUserRole(userRole: any): Promise<UserRole> {
         return new Promise((resolve, reject) => reject(422));
     }
 }
+
+export function getRoleName(id: any): Promise<UserRole> {
+    return userRoleDao.getRoleName(id);
+}

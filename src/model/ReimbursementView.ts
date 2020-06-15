@@ -1,5 +1,4 @@
 export class ReimbursementView {
-
 	amount: number;
 	submitted: Date;
 	resolved: Date;

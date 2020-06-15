@@ -5,7 +5,8 @@ export const reimbursementViewRouter = express.Router();
 
 reimbursementViewRouter.get('/status', (request, response, next) => {
     const status = request.body;
-    reimbursementViewService.getReimbursementByStatus(status).then(getstatus => {
+    const status2:string = 'Pending';
+    reimbursementViewService.getReimbursementByStatus(status2).then(getstatus => {
         response.status(201);
         response.json(getstatus);
         next();
@@ -16,7 +17,8 @@ reimbursementViewRouter.get('/status', (request, response, next) => {
 
 reimbursementViewRouter.get('/type', (request, response, next) => {
     const type = request.body;
-    reimbursementViewService.getReimbursementByStatus(type).then(gettype => {
+    const type2:string = 'FOOD';
+    reimbursementViewService.getReimbursementsByType(type2).then(gettype => {
         response.status(201);
         response.json(gettype);
         next();
@@ -27,7 +29,9 @@ reimbursementViewRouter.get('/type', (request, response, next) => {
 
 reimbursementViewRouter.get('/status_type', (request, response, next) => {
     const statusType = request.body;
-    reimbursementViewService.getReimbursementByStatus(statusType).then(getStatusType => {
+    const status = 'Pending';
+    const type = 'LODGING';
+    reimbursementViewService.getReimbursementsByStatusAndType(status,type).then(getStatusType => {
         response.status(201);
         response.json(getStatusType);
         next();
